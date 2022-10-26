@@ -120,7 +120,8 @@ install.ohmyzsh() {
     if ! is-command git; then
         install.packages git
     fi
-    
+    # install dependencies
+    apt install htop nano screen zsh -y
     # https://ohmyz.sh/#install
     curl -sSL -H 'Cache-Control: no-cache' https://github.com/ohmyzsh/ohmyzsh/raw/master/tools/install.sh | sudo -Eu ${S_USER} sh    
 }
