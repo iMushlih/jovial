@@ -122,6 +122,7 @@ install.ohmyzsh() {
     fi
     # install dependencies
     apt install htop nano screen -y
+    echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen "en_US.UTF-8 UTF-8"
     # https://ohmyz.sh/#install
     curl -sSL -H 'Cache-Control: no-cache' https://github.com/ohmyzsh/ohmyzsh/raw/master/tools/install.sh | sudo -Eu ${S_USER} sh    
 }
