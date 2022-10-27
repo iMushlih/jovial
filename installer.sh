@@ -137,7 +137,7 @@ install.zsh-plugins() {
         install.packages git
     fi
 
-    install.packages autojump terminal-notifier source-highlight
+    install.packages autojump terminal-notifier source-highlight 
 
     if [[ ! -d ${plugin_dir}/zsh-autosuggestions ]]; then
         log.info "[jovial] install plugin zsh-autosuggestions"
@@ -150,8 +150,10 @@ install.zsh-plugins() {
     fi
     
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-    /bin/zsh -c "source /root/.nvm/nvm.sh && nvm install --lts"
-    /bin/zsh -c "source /root/.zshrc && npm i -g zsh-history-enquirer --unsafe-perm"
+#     /bin/zsh -c "source /root/.nvm/nvm.sh && nvm install --lts"
+#     /bin/zsh -c "source /root/.zshrc && npm i -g zsh-history-enquirer --unsafe-perm"
+    source /root/.nvm/nvm.sh && nvm install --lts
+    source /root/.zshrc && npm i -g zsh-history-enquirer --unsafe-perm
     echo 'source `npm root -g`/zsh-history-enquirer/scripts/zsh-history-enquirer.plugin.zsh' >> /root/.zshrc
     
 #     log.info "[jovial] install nvm"
