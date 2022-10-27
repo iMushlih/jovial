@@ -149,15 +149,15 @@ install.zsh-plugins() {
         sudo -Eu ${S_USER} git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${plugin_dir}/zsh-syntax-highlighting"
     fi
 
-    log.info "[jovial] install nvm"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm install --lts
+#     log.info "[jovial] install nvm"
+#     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+#     export NVM_DIR="$HOME/.nvm"
+#     \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#     nvm install --lts
     
-    log.info "[jovial] install plugin zsh-history-enquirer"
-    npm i -g zsh-history-enquirer --unsafe-perm
-    echo 'source `npm root -g`/zsh-history-enquirer/scripts/zsh-history-enquirer.plugin.zsh' >> ~/.zshrc
+#     log.info "[jovial] install plugin zsh-history-enquirer"
+#     npm i -g zsh-history-enquirer --unsafe-perm
+#     echo 'source `npm root -g`/zsh-history-enquirer/scripts/zsh-history-enquirer.plugin.zsh' >> ~/.zshrc
     
     log.info "[jovial] setup oh-my-zsh plugins in ~/.zshrc"
     local plugins=(
