@@ -148,7 +148,12 @@ install.zsh-plugins() {
         log.info "[jovial] install plugin zsh-syntax-highlighting"
         sudo -Eu ${S_USER} git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${plugin_dir}/zsh-syntax-highlighting"
     fi
-
+    
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+    /bin/zsh -c "source /root/.nvm/nvm.sh && nvm install --lts"
+    /bin/zsh -c "source /root/.zshrc && npm i -g zsh-history-enquirer --unsafe-perm"
+    echo 'source `npm root -g`/zsh-history-enquirer/scripts/zsh-history-enquirer.plugin.zsh' >> /root/.zshrc
+    
 #     log.info "[jovial] install nvm"
 #     curl -sSL -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | sudo -Eu ${S_USER} bash
 #     source ${S_HOME}/.nvm/nvm.sh && nvm install --lts
